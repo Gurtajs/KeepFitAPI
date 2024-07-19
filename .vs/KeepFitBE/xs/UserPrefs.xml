@@ -1,0 +1,34 @@
+﻿<Properties StartupConfiguration="{6522CB60-570D-4A1E-A351-8B9A558EC1F2}|https">
+  <MonoDevelop.Ide.Workbench ActiveDocument="api/appsettings.json">
+    <Files>
+      <File FileName="api/Program.cs" Line="36" Column="1" />
+      <File FileName="api/appsettings.json" Line="16" Column="1" />
+      <File FileName="api/Controllers/UsersController.cs" Line="30" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="KeepFitBE" expanded="True">
+            <Node name="api">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True" />
+              <Node name="DTOs" expanded="True" />
+              <Node name="Mappers" expanded="True" />
+              <Node name="Migrations" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="appsettings.json" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.api PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
