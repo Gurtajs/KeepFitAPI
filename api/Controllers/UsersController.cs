@@ -13,6 +13,7 @@ using System.Security.Claims;
 using api.Models;
 using Newtonsoft.Json.Linq;
 using System.Text.Json;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace api.Controllers
 {
@@ -79,7 +80,7 @@ namespace api.Controllers
 		}
 
 		 private async Task<Users> GetUserDetailsByEmail(string email)
-    {
+		 {
         // Use parameterized query to prevent SQL injection
         var user = await _context.Users
             .FromSqlInterpolated($"SELECT * FROM Users WHERE Email = {email}")
@@ -92,6 +93,7 @@ namespace api.Controllers
 
         return new Users
         {
+			UserId = user.UserId,
 			Email= user.Email,
             FirstName = user.FirstName,
             LastName = user.LastName,
@@ -99,7 +101,7 @@ namespace api.Controllers
 			Weight = user.Weight,
 			Height = user.Height
         };
-    }
+		}
 
 		[HttpPost]
 		public IActionResult PostUser([FromBody] CreateUsersRequestDto usersDto)
@@ -108,6 +110,35 @@ namespace api.Controllers
 			_context.Users.Add(usersModel);
 			_context.SaveChanges();
 			return CreatedAtAction(nameof(GetUserById), new { id = usersModel.UserId }, usersModel.ToUsersDto());
+		}
+
+		[HttpPatch("{id}")]
+		public IActionResult PatchUser([FromRoute] int id, [FromBody] JsonPatchDocument<Users> patchUser)
+		{
+			if (patchUser !=null)
+			{
+				var user = _context.Users.Find(id);
+
+                patchUser.ApplyTo(user, ModelState);
+
+
+                if (user == null)
+                {
+                    return NotFound();
+                }
+
+				if (!ModelState.IsValid)
+				{
+					return BadRequest(ModelState);
+				}
+
+                return new ObjectResult(user);
+            }
+			else
+			{
+				return BadRequest(ModelState);
+			}
+			
 		}
 	}
 }

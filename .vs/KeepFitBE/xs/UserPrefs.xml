@@ -1,34 +1,34 @@
 ﻿<Properties StartupConfiguration="{6522CB60-570D-4A1E-A351-8B9A558EC1F2}|https">
-  <MonoDevelop.Ide.Workbench ActiveDocument="api/appsettings.json">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.api PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="api/Controllers/UsersController.cs">
     <Files>
-      <File FileName="api/Program.cs" Line="36" Column="1" />
-      <File FileName="api/appsettings.json" Line="16" Column="1" />
-      <File FileName="api/Controllers/UsersController.cs" Line="30" Column="1" />
+      <File FileName="api/Program.cs" />
+      <File FileName="api/appsettings.json" />
+      <File FileName="api/Controllers/UsersController.cs" Line="113" Column="1" />
+      <File FileName="api/Data/ApplicationDBContext.cs" Line="20" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="KeepFitBE" expanded="True">
+          <Node name="KeepFitBE">
             <Node name="api">
-              <Node name="Dependencies" expanded="True" />
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers">
+                <Node name="UsersController.cs" selected="True" />
+              </Node>
               <Node name="Data" expanded="True" />
-              <Node name="DTOs" expanded="True" />
-              <Node name="Mappers" expanded="True" />
-              <Node name="Migrations" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="appsettings.json" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.api PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

@@ -9,6 +9,8 @@
 /Users/gurtaj/Desktop/KeepFitBE/api/obj/Release/net8.0/PubTmp/Out/Azure.Identity.dll
 /Users/gurtaj/Desktop/KeepFitBE/api/obj/Release/net8.0/PubTmp/Out/Azure.Security.KeyVault.Secrets.dll
 /Users/gurtaj/Desktop/KeepFitBE/api/obj/Release/net8.0/PubTmp/Out/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/gurtaj/Desktop/KeepFitBE/api/obj/Release/net8.0/PubTmp/Out/Microsoft.AspNetCore.JsonPatch.dll
+/Users/gurtaj/Desktop/KeepFitBE/api/obj/Release/net8.0/PubTmp/Out/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 /Users/gurtaj/Desktop/KeepFitBE/api/obj/Release/net8.0/PubTmp/Out/Microsoft.AspNetCore.OpenApi.dll
 /Users/gurtaj/Desktop/KeepFitBE/api/obj/Release/net8.0/PubTmp/Out/Microsoft.Azure.KeyVault.dll
 /Users/gurtaj/Desktop/KeepFitBE/api/obj/Release/net8.0/PubTmp/Out/Microsoft.Azure.KeyVault.WebKey.dll
@@ -37,6 +39,7 @@
 /Users/gurtaj/Desktop/KeepFitBE/api/obj/Release/net8.0/PubTmp/Out/Microsoft.SqlServer.Server.dll
 /Users/gurtaj/Desktop/KeepFitBE/api/obj/Release/net8.0/PubTmp/Out/Microsoft.Win32.SystemEvents.dll
 /Users/gurtaj/Desktop/KeepFitBE/api/obj/Release/net8.0/PubTmp/Out/Newtonsoft.Json.dll
+/Users/gurtaj/Desktop/KeepFitBE/api/obj/Release/net8.0/PubTmp/Out/Newtonsoft.Json.Bson.dll
 /Users/gurtaj/Desktop/KeepFitBE/api/obj/Release/net8.0/PubTmp/Out/Swashbuckle.AspNetCore.Swagger.dll
 /Users/gurtaj/Desktop/KeepFitBE/api/obj/Release/net8.0/PubTmp/Out/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/gurtaj/Desktop/KeepFitBE/api/obj/Release/net8.0/PubTmp/Out/Swashbuckle.AspNetCore.SwaggerUI.dll
