@@ -14,6 +14,7 @@ using api.Models;
 using Newtonsoft.Json.Linq;
 using System.Text.Json;
 using Microsoft.AspNetCore.JsonPatch;
+using Newtonsoft.Json;
 
 namespace api.Controllers
 {
@@ -51,12 +52,12 @@ namespace api.Controllers
 
 		[HttpPost]
 		[Microsoft.AspNetCore.Mvc.Route("details")]
-		public async Task<IActionResult> GetUserDetails([FromBody] JsonElement data)
+		public async Task<IActionResult> GetUserDetails([FromBody] JObject data)
 		{
 			try
 			{
 				// Extract email from JSON request body
-				var email = data.GetProperty("email").GetString();
+				var email = data["email"]?.ToString();
 				
 				if (string.IsNullOrEmpty(email))
 				{
@@ -90,7 +91,6 @@ namespace api.Controllers
         {
             return null; // User not found
         }
-
         return new Users
         {
 			UserId = user.UserId,
@@ -111,34 +111,34 @@ namespace api.Controllers
 			_context.SaveChanges();
 			return CreatedAtAction(nameof(GetUserById), new { id = usersModel.UserId }, usersModel.ToUsersDto());
 		}
-
+		
 		[HttpPatch("{id}")]
 		public IActionResult PatchUser([FromRoute] int id, [FromBody] JsonPatchDocument<Users> patchUser)
 		{
-			if (patchUser !=null)
+			if (patchUser != null)
 			{
 				var user = _context.Users.Find(id);
 
-                patchUser.ApplyTo(user, ModelState);
+				patchUser.ApplyTo(user, ModelState);
 
+				_context.SaveChangesAsync();
 
-                if (user == null)
-                {
-                    return NotFound();
-                }
+				if (user == null)
+				{
+					return NotFound();
+				}
 
 				if (!ModelState.IsValid)
 				{
 					return BadRequest(ModelState);
 				}
-
-                return new ObjectResult(user);
-            }
+				return Ok(user);
+			}
 			else
 			{
 				return BadRequest(ModelState);
 			}
-			
+
 		}
 	}
 }

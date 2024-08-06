@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using api.Data;
+using api.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace api.Controllers
 {
 	[Route("api/workouts")]
+
 	[ApiController]
 	public class WorkoutController : ControllerBase 
 	{
@@ -36,6 +38,21 @@ namespace api.Controllers
 				return NotFound();
 			}
 			return Ok(Workout);
+		}
+
+		[HttpPost]
+		public IActionResult PostWorkout([FromBody] Workouts workouts)
+		{
+			if (workouts == null)
+			{
+				return BadRequest();
+			}
+
+			_context.Workouts.Add(workouts);
+
+			_context.SaveChangesAsync();
+
+			return CreatedAtAction(nameof(GetWorkoutById), new { id = workouts.WorkoutId }, workouts);
 		}
 	}
 }

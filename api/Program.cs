@@ -13,17 +13,19 @@ using Microsoft.Extensions.Configuration.AzureKeyVault;
 using Azure.Security.KeyVault.Secrets;
 using Microsoft.Azure.KeyVault;
 using Microsoft.Azure.Services.AppAuthentication;
+using Microsoft.AspNetCore.Mvc.Formatters;                                                         
+using api;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers().AddNewtonsoftJson();
-		
+builder.Services.AddControllersWithViews().AddNewtonsoftJson();
+
 builder.Services.AddSwaggerGen();
 
 if (builder.Environment.IsProduction())
 {
     var keyVaultURL = builder.Configuration.GetSection("KeyVault:KeyVaultURL");
-
+    
     var keyVaultClient = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(new AzureServiceTokenProvider().KeyVaultTokenCallback));
     builder.Configuration.AddAzureKeyVault(keyVaultURL.Value!.ToString(), new DefaultKeyVaultSecretManager());
     var client = new SecretClient(new Uri(keyVaultURL.Value!.ToString()), new DefaultAzureCredential());
@@ -41,8 +43,6 @@ if (builder.Environment.IsDevelopment())
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 }
 
-
-builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
@@ -64,6 +64,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthentication();
+app.UseAuthorization();
+
 
 app.MapControllerRoute(
     name: "default",

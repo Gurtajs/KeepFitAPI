@@ -51,6 +51,7 @@
 /Users/gurtaj/Desktop/KeepFitBE/api/obj/Release/net8.0/PubTmp/Out/System.Runtime.Caching.dll
 /Users/gurtaj/Desktop/KeepFitBE/api/obj/Release/net8.0/PubTmp/Out/System.Security.Cryptography.ProtectedData.dll
 /Users/gurtaj/Desktop/KeepFitBE/api/obj/Release/net8.0/PubTmp/Out/System.Security.Permissions.dll
+/Users/gurtaj/Desktop/KeepFitBE/api/obj/Release/net8.0/PubTmp/Out/System.Text.Json.dll
 /Users/gurtaj/Desktop/KeepFitBE/api/obj/Release/net8.0/PubTmp/Out/System.Windows.Extensions.dll
 /Users/gurtaj/Desktop/KeepFitBE/api/obj/Release/net8.0/PubTmp/Out/runtimes/unix/lib/net6.0/Microsoft.Data.SqlClient.dll
 /Users/gurtaj/Desktop/KeepFitBE/api/obj/Release/net8.0/PubTmp/Out/runtimes/win/lib/net6.0/Microsoft.Data.SqlClient.dll
