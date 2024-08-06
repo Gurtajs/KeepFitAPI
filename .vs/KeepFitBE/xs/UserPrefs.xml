@@ -1,34 +1,36 @@
 ﻿<Properties StartupConfiguration="{6522CB60-570D-4A1E-A351-8B9A558EC1F2}|https">
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.api PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="api/Controllers/UsersController.cs">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="api/Controllers/WorkoutController.cs">
     <Files>
-      <File FileName="api/Program.cs" />
-      <File FileName="api/appsettings.json" />
-      <File FileName="api/Controllers/UsersController.cs" Line="113" Column="1" />
-      <File FileName="api/Data/ApplicationDBContext.cs" Line="20" Column="2" />
+      <File FileName="api/Controllers/WorkoutController.cs" Line="58" Column="2" />
+      <File FileName="api/Controllers/UsersController.cs" Line="109" Column="8" />
+      <File FileName="api/Models/Workouts.cs" Line="1" Column="1" />
+      <File FileName="api/Data/ApplicationDBContext.cs" Line="17" Column="29" />
+      <File FileName="api/Models/Users.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="KeepFitBE">
+          <Node name="KeepFitBE" expanded="True">
             <Node name="api">
-              <Node name="Controllers">
-                <Node name="UsersController.cs" selected="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="WorkoutController.cs" selected="True" />
               </Node>
               <Node name="Data" expanded="True" />
+              <Node name="DTOs" expanded="True">
+                <Node name="User" expanded="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>
