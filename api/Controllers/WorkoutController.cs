@@ -5,13 +5,14 @@ using System.Threading.Tasks;
 using api.Data;
 using api.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace api.Controllers
 {
 	[Route("api/workouts")]
 
 	[ApiController]
-	public class WorkoutController : ControllerBase 
+	public class WorkoutController : ControllerBase
 	{
 		private readonly ApplicationDBContext _context;
 		public WorkoutController(ApplicationDBContext context)
@@ -21,7 +22,7 @@ namespace api.Controllers
 
 		[HttpGet]
 
-		public IActionResult GetAll() 
+		public IActionResult GetAll()
 		{
 			var Workouts = _context.Workouts.ToList();
 
@@ -29,10 +30,10 @@ namespace api.Controllers
 		}
 
 		[HttpGet("{id}")]
-		public IActionResult GetWorkoutById([FromRoute] int id) 
+		public IActionResult GetWorkoutById([FromRoute] int id)
 		{
 			var Workout = _context.Workouts.Find(id);
-			
+
 			if (Workout == null)
 			{
 				return NotFound();
@@ -54,5 +55,5 @@ namespace api.Controllers
 
 			return CreatedAtAction(nameof(GetWorkoutById), new { id = workouts.WorkoutId }, workouts);
 		}
-	}
+}
 }

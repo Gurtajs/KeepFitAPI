@@ -140,5 +140,17 @@ namespace api.Controllers
 			}
 
 		}
-	}
+        [HttpGet("{id}/workouts")]
+
+        public IActionResult GetWorkoutByUser([FromRoute] int id)
+        {
+            var workouts = _context.Workouts.FromSqlInterpolated($"SELECT * FROM Workouts WHERE userId = {id}").ToList();
+
+            if (workouts == null)
+            {
+                return NotFound();
+            }
+            return Ok(workouts);
+        }
+    }
 }
