@@ -11,6 +11,7 @@ namespace api.Models
 	{
 		[Key]
         public int WorkoutId { get; set; }
+        public string MuscleGroup { get; set; } = string.Empty;
         public string ExerciseName { get; set; } = string.Empty;
         public int Weight { get; set; }
         public int Sets { get; set; }
@@ -18,5 +19,6 @@ namespace api.Models
         public DateTime WorkoutDate { get; set; }
 		public int UserId { get; set; }  // Foreign key to User
 		public Users? Users { get; set; }  // Required navigation property
+        public MuscleGroups? MuscleGroups { get; set; }
     }
 }

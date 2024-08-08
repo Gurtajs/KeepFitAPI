@@ -29,17 +29,30 @@ namespace api.Controllers
 			return Ok(Workouts);
 		}
 
-		[HttpGet("{id}")]
-		public IActionResult GetWorkoutById([FromRoute] int id)
-		{
-			var Workout = _context.Workouts.Find(id);
+		//[HttpGet("{id}")]
+		//public IActionResult GetWorkoutById([FromRoute] int id)
+		//{
+		//	var Workout = _context.Workouts.Find(id);
 
-			if (Workout == null)
-			{
-				return NotFound();
-			}
-			return Ok(Workout);
-		}
+		//	if (Workout == null)
+		//	{
+		//		return NotFound();
+		//	}
+		//	return Ok(Workout);
+		//}
+
+		[HttpGet("{muscleGroup}")]
+        public IActionResult GetWorkoutByMuscleGroup([FromRoute] string muscleGroup)
+        {
+			var workouts = _context.Workouts.FromSqlInterpolated($"SELECT * FROM Workouts WHERE muscleGroup = {muscleGroup}").ToList();
+		 
+            if (workouts == null)
+            {
+                return NotFound();
+            }
+            return Ok(workouts);
+        }
+
 
 		[HttpPost]
 		public IActionResult PostWorkout([FromBody] Workouts workouts)
@@ -53,7 +66,7 @@ namespace api.Controllers
 
 			_context.SaveChangesAsync();
 
-			return CreatedAtAction(nameof(GetWorkoutById), new { id = workouts.WorkoutId }, workouts);
+			return CreatedAtAction(nameof(GetWorkoutByMuscleGroup), new { id = workouts.WorkoutId }, workouts);
 		}
-}
+	}
 }

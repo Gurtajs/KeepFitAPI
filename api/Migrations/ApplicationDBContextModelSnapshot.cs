@@ -22,6 +22,23 @@ namespace api.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("api.Models.MuscleGroups", b =>
+                {
+                    b.Property<int>("MuscleGroupId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MuscleGroupId"));
+
+                    b.Property<string>("MuscleGroup")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MuscleGroupId");
+
+                    b.ToTable("MuscleGroups");
+                });
+
             modelBuilder.Entity("api.Models.Users", b =>
                 {
                     b.Property<int>("UserId")
@@ -71,6 +88,13 @@ namespace api.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("MuscleGroup")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("MuscleGroupsMuscleGroupId")
+                        .HasColumnType("int");
+
                     b.Property<int>("Reps")
                         .HasColumnType("int");
 
@@ -91,6 +115,8 @@ namespace api.Migrations
 
                     b.HasKey("WorkoutId");
 
+                    b.HasIndex("MuscleGroupsMuscleGroupId");
+
                     b.HasIndex("UsersUserId");
 
                     b.ToTable("Workouts");
@@ -98,11 +124,22 @@ namespace api.Migrations
 
             modelBuilder.Entity("api.Models.Workouts", b =>
                 {
+                    b.HasOne("api.Models.MuscleGroups", "MuscleGroups")
+                        .WithMany("Workout")
+                        .HasForeignKey("MuscleGroupsMuscleGroupId");
+
                     b.HasOne("api.Models.Users", "Users")
                         .WithMany("Workout")
                         .HasForeignKey("UsersUserId");
 
+                    b.Navigation("MuscleGroups");
+
                     b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("api.Models.MuscleGroups", b =>
+                {
+                    b.Navigation("Workout");
                 });
 
             modelBuilder.Entity("api.Models.Users", b =>
