@@ -1,23 +1,20 @@
 ﻿<Properties StartupConfiguration="{6522CB60-570D-4A1E-A351-8B9A558EC1F2}|https">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.api PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workbench ActiveDocument="api/Controllers/UsersController.cs">
     <Files>
       <File FileName="api/Data/ApplicationDBContext.cs" />
       <File FileName="api/Models/Users.cs" />
-      <File FileName="api/Controllers/WorkoutController.cs" Line="67" Column="24" />
-      <File FileName="api/Controllers/UsersController.cs" Line="126" Column="22" />
+      <File FileName="api/Controllers/WorkoutController.cs" />
+      <File FileName="api/Controllers/UsersController.cs" Line="168" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="KeepFitBE" expanded="True">
-            <Node name="api" selected="True">
-              <Node name="Controllers" expanded="True" />
+          <Node name="KeepFitBE">
+            <Node name="api" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="UsersController.cs" selected="True" />
+              </Node>
               <Node name="Data" expanded="True" />
             </Node>
           </Node>
@@ -28,5 +25,10 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.api PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>
