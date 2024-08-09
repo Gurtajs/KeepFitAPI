@@ -119,9 +119,9 @@ namespace api.Controllers
 			{
 				var user = _context.Users.Find(id);
 
-				patchUser.ApplyTo(user, ModelState);
+                patchUser.ApplyTo(user, ModelState);
 
-				_context.SaveChangesAsync();
+				_context.SaveChanges();
 
 				if (user == null)
 				{
@@ -132,7 +132,7 @@ namespace api.Controllers
 				{
 					return BadRequest(ModelState);
 				}
-				return Ok(user);
+				return new ObjectResult(user);
 			}
 			else
 			{
@@ -140,11 +140,24 @@ namespace api.Controllers
 			}
 
 		}
+        //[HttpGet("{id}/workouts/{muscleGroup}")]
+
+        //public IActionResult GetWorkoutByUser([FromRoute] int id, string muscleGroup)
+        //{
+        //    var workouts = _context.Workouts.FromSqlInterpolated($"SELECT * FROM Workouts WHERE userId = {id} AND muscleGroup= {muscleGroup}").ToList();
+
+        //    if (workouts == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return Ok(workouts);
+        //}
+
         [HttpGet("{id}/workouts")]
 
         public IActionResult GetWorkoutByUser([FromRoute] int id)
         {
-            var workouts = _context.Workouts.FromSqlInterpolated($"SELECT * FROM Workouts WHERE userId = {id}").ToList();
+            var workouts = _context.Workouts.FromSqlInterpolated($"SELECT * FROM Workouts WHERE userId = {id} ORDER BY workoutId DESC").ToList();
 
             if (workouts == null)
             {

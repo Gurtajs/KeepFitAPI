@@ -64,7 +64,7 @@ namespace api.Controllers
 
 			_context.Workouts.Add(workouts);
 
-			_context.SaveChangesAsync();
+			_context.SaveChanges();
 
 			return CreatedAtAction(nameof(GetWorkoutByMuscleGroup), new { id = workouts.WorkoutId }, workouts);
 		}
