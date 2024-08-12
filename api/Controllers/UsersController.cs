@@ -157,7 +157,7 @@ namespace api.Controllers
 
         public IActionResult GetWorkoutByUser([FromRoute] int id)
         {
-            var workouts = _context.Workouts.FromSqlInterpolated($"SELECT * FROM Workouts WHERE userId = {id} ORDER BY workoutId DESC").ToList();
+            var workouts = _context.Workouts.FromSqlInterpolated($"SELECT * FROM Workouts WHERE userId = {id} ORDER BY workoutDate DESC").ToList();
 
             if (workouts == null)
             {
