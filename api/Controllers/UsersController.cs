@@ -165,5 +165,19 @@ namespace api.Controllers
             }
             return Ok(workouts);
         }
+
+        [HttpGet("{id}/workouts/{date}")]
+
+        public IActionResult GetWorkoutByUserDate([FromRoute] int id, DateTime date)
+        {
+            var workouts = _context.Workouts.FromSqlInterpolated($"SELECT * FROM Workouts WHERE userId = {id} AND WorkoutDate = {date} ORDER BY workoutDate DESC").ToList();
+
+            if (workouts == null)
+            {
+                return NotFound();
+            }
+            return Ok(workouts);
+        }
+
     }
 }
