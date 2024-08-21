@@ -12,8 +12,8 @@ using api.Data;
 namespace api.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20240808104637_updatedvers")]
-    partial class updatedvers
+    [Migration("20240821141046_initupdated")]
+    partial class initupdated
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -64,6 +64,9 @@ namespace api.Migrations
                     b.Property<int?>("Height")
                         .HasColumnType("int");
 
+                    b.Property<string>("HeightUnit")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -73,6 +76,9 @@ namespace api.Migrations
 
                     b.Property<int?>("Weight")
                         .HasColumnType("int");
+
+                    b.Property<string>("WeightUnit")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UserId");
 

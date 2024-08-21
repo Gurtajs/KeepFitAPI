@@ -16,7 +16,9 @@ namespace api.Models
 		public int Age { get; set; }
 		public string? ProfilePicture { get; set; } = null;
 		public int? Weight { get; set; }
-		public int? Height { get; set; }
+		public string? WeightUnit { get; set; }
+		public string? Height { get; set; }
+		public string? HeightUnit { get; set; }
 		public List<Workouts> Workout { get; set; } = new List<Workouts>();
 	}
 }

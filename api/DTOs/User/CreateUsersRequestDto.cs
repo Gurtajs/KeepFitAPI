@@ -13,6 +13,8 @@ namespace api.DTOs.Users
 		public int age { get; set; }
 		public string? ProfilePicture { get; set; } = null;
 		public int? Weight { get; set; }
-		public int? Height { get; set; }
+        public string? WeightUnit { get; set; }
+        public string? Height { get; set; }
+        public string? HeightUnit { get; set; }
     }
 }

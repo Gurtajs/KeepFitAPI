@@ -20,7 +20,9 @@ namespace api.Mappers
 			Age = usersModel.Age,
 			ProfilePicture = usersModel.ProfilePicture,
 			Weight = usersModel.Weight,
-			Height = usersModel.Height
+			WeightUnit = usersModel.WeightUnit,
+			Height = usersModel.Height,
+            HeightUnit = usersModel.HeightUnit
 		};
 	}
 	public static Users ToUsersFromCreateDto(this CreateUsersRequestDto usersDto)
@@ -33,8 +35,10 @@ namespace api.Mappers
 			Age = usersDto.age,
 			ProfilePicture = usersDto.ProfilePicture,
 			Weight = usersDto.Weight,
-			Height = usersDto.Height
-		};
+            WeightUnit = usersDto.WeightUnit,
+            Height = usersDto.Height,
+            HeightUnit = usersDto.HeightUnit
+        };
 	}
 }
 }

@@ -61,6 +61,9 @@ namespace api.Migrations
                     b.Property<int?>("Height")
                         .HasColumnType("int");
 
+                    b.Property<string>("HeightUnit")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -70,6 +73,9 @@ namespace api.Migrations
 
                     b.Property<int?>("Weight")
                         .HasColumnType("int");
+
+                    b.Property<string>("WeightUnit")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UserId");
 

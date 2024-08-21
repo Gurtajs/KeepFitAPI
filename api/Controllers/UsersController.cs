@@ -99,7 +99,9 @@ namespace api.Controllers
             LastName = user.LastName,
             Age = user.Age,
 			Weight = user.Weight,
-			Height = user.Height
+			WeightUnit = user.WeightUnit,
+			Height = user.Height,
+			HeightUnit = user.HeightUnit,
         };
 		}
 
