@@ -8,7 +8,7 @@ namespace api.Models
 		[Key]
 		public int MuscleGroupId { get; set; }
 
-        public string MuscleGroup { get; set; } = string.Empty;
+        public string? MuscleGroup { get; set; }
         public List<Workouts> Workout { get; set; } = new List<Workouts>();
     }
 }

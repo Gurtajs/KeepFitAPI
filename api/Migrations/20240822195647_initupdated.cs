@@ -17,7 +17,7 @@ namespace api.Migrations
                 {
                     MuscleGroupId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    MuscleGroup = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    MuscleGroup = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -37,7 +37,7 @@ namespace api.Migrations
                     ProfilePicture = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Weight = table.Column<int>(type: "int", nullable: true),
                     WeightUnit = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Height = table.Column<int>(type: "int", nullable: true),
+                    Height = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     HeightUnit = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -51,9 +51,9 @@ namespace api.Migrations
                 {
                     WorkoutId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    MuscleGroup = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MuscleGroup = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ExerciseName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Weight = table.Column<int>(type: "int", nullable: false),
+                    Weight = table.Column<int>(type: "int", nullable: true),
                     Sets = table.Column<int>(type: "int", nullable: false),
                     Reps = table.Column<int>(type: "int", nullable: false),
                     WorkoutDate = table.Column<DateTime>(type: "datetime2", nullable: false),

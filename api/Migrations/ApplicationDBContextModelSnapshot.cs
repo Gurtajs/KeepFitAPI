@@ -31,7 +31,6 @@ namespace api.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MuscleGroupId"));
 
                     b.Property<string>("MuscleGroup")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("MuscleGroupId");
@@ -58,8 +57,8 @@ namespace api.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Height")
-                        .HasColumnType("int");
+                    b.Property<string>("Height")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("HeightUnit")
                         .HasColumnType("nvarchar(max)");
@@ -95,7 +94,6 @@ namespace api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MuscleGroup")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("MuscleGroupsMuscleGroupId")
@@ -113,7 +111,7 @@ namespace api.Migrations
                     b.Property<int?>("UsersUserId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Weight")
+                    b.Property<int?>("Weight")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("WorkoutDate")

@@ -11,9 +11,9 @@ namespace api.Models
 	{
 		[Key]
         public int WorkoutId { get; set; }
-        public string MuscleGroup { get; set; } = string.Empty;
+        public string? MuscleGroup { get; set; }
         public string ExerciseName { get; set; } = string.Empty;
-        public int Weight { get; set; }
+        public int? Weight { get; set; }
         public int Sets { get; set; }
         public int Reps { get; set; }
         public DateTime WorkoutDate { get; set; }
