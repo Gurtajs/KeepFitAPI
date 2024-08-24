@@ -98,6 +98,7 @@ namespace api.Controllers
             FirstName = user.FirstName,
             LastName = user.LastName,
             Age = user.Age,
+			ProfilePicture = user.ProfilePicture,
 			Weight = user.Weight,
 			WeightUnit = user.WeightUnit,
 			Height = user.Height,
