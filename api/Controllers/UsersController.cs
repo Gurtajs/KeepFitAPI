@@ -169,7 +169,7 @@ namespace api.Controllers
             return Ok(workouts);
         }
 
-        [HttpGet("{id}/workouts/{date}")]
+        [HttpGet("{id}/workouts/{date:datetime}")]
 
         public IActionResult GetWorkoutByUserDate([FromRoute] int id, DateTime date)
         {
@@ -182,5 +182,33 @@ namespace api.Controllers
             return Ok(workouts);
         }
 
+        [HttpGet("{id}/workouts/{workoutId:int}")]
+
+        public IActionResult GetWorkoutByWorkoutId(int id, int workoutId)
+        {
+            var workoutsById = _context.Workouts.FromSqlInterpolated($"SELECT * FROM Workouts WHERE userId = {id} AND WorkoutId = {workoutId}").ToList();
+
+            if (workoutsById == null)
+            {
+                return NotFound();
+            }
+            return Ok(workoutsById);
+        }
+
+        [HttpDelete("{id}/workouts/{workoutId}")]
+
+		public IActionResult DeleteWorkout(int id, int workoutId)
+		{
+			var workoutToDelete = _context.Workouts.FirstOrDefault(w => w.UserId== id && w.WorkoutId==workoutId);
+
+			if (workoutToDelete == null)
+			{
+				return NotFound("workout not found");
+			}
+			_context.Remove(workoutToDelete);
+			_context.SaveChanges();
+
+			return Ok("Workout deleted successfully");
+		}
     }
 }
