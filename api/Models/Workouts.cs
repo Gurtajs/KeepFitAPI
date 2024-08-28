@@ -17,6 +17,7 @@ namespace api.Models
         public int Sets { get; set; }
         public int Reps { get; set; }
         public DateTime WorkoutDate { get; set; }
+        public int? Rating { get; set; }
 		public int UserId { get; set; }  // Foreign key to User
 		public Users? Users { get; set; }  // Required navigation property
         public MuscleGroups? MuscleGroups { get; set; }

@@ -99,6 +99,9 @@ namespace api.Migrations
                     b.Property<int?>("MuscleGroupsMuscleGroupId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("Rating")
+                        .HasColumnType("int");
+
                     b.Property<int>("Reps")
                         .HasColumnType("int");
 
