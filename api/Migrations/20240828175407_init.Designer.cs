@@ -12,8 +12,8 @@ using api.Data;
 namespace api.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20240822195647_initupdated")]
-    partial class initupdated
+    [Migration("20240828175407_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -100,6 +100,9 @@ namespace api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("MuscleGroupsMuscleGroupId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Rating")
                         .HasColumnType("int");
 
                     b.Property<int>("Reps")

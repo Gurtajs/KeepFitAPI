@@ -185,6 +185,7 @@ namespace api.Controllers
 
         [HttpDelete("{id}/workouts/{workoutId}")]
 
+<<<<<<< HEAD
         public IActionResult DeleteWorkout(int id, int workoutId)
         {
             var workoutToDelete = _context.Workouts.FirstOrDefault(w => w.UserId == id && w.WorkoutId == workoutId);
@@ -198,5 +199,20 @@ namespace api.Controllers
 
             return Ok("Workout deleted successfully");
         }
+=======
+		public IActionResult DeleteWorkout(int id, int workoutId)
+		{
+			var workoutToDelete = _context.Workouts.FirstOrDefault(w => w.UserId== id && w.WorkoutId==workoutId);
+
+			if (workoutToDelete == null)
+			{
+				return NotFound("workout not found");
+			}
+			_context.Remove(workoutToDelete);
+			_context.SaveChanges();
+
+			return Ok("Workout deleted successfully");
+		}
+>>>>>>> 6174d157bdcd850398e5277839600d4f80e9d76e
     }
 }

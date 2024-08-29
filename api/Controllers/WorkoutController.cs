@@ -29,18 +29,6 @@ namespace api.Controllers
 			return Ok(Workouts);
 		}
 
-		//[HttpGet("{id}")]
-		//public IActionResult GetWorkoutById([FromRoute] int id)
-		//{
-		//	var Workout = _context.Workouts.Find(id);
-
-		//	if (Workout == null)
-		//	{
-		//		return NotFound();
-		//	}
-		//	return Ok(Workout);
-		//}
-
 		[HttpGet("{muscleGroup}")]
         public IActionResult GetWorkoutByMuscleGroup([FromRoute] string muscleGroup)
         {
@@ -52,7 +40,6 @@ namespace api.Controllers
             }
             return Ok(workouts);
         }
-
 
 		[HttpPost]
 		public IActionResult PostWorkout([FromBody] Workouts workouts)

@@ -17,6 +17,5 @@ namespace api.DTOs.Users
         public string? WeightUnit { get; set; }
         public string? Height { get; set; }
         public string? HeightUnit { get; set; }
-
     }
 }
