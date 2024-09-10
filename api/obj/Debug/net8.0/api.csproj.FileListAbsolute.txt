@@ -1,4 +1,3 @@
-/Users/gurtaj/Desktop/KeepFitBE/api/bin/Debug/net8.0/appsettings.Development.json
 /Users/gurtaj/Desktop/KeepFitBE/api/bin/Debug/net8.0/appsettings.json
 /Users/gurtaj/Desktop/KeepFitBE/api/bin/Debug/net8.0/api
 /Users/gurtaj/Desktop/KeepFitBE/api/bin/Debug/net8.0/api.deps.json
