@@ -12,8 +12,8 @@ using api.Data;
 namespace api.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20240828175407_init")]
-    partial class init
+    [Migration("20240911151208_init1")]
+    partial class init1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,6 +39,43 @@ namespace api.Migrations
                     b.HasKey("MuscleGroupId");
 
                     b.ToTable("MuscleGroups");
+                });
+
+            modelBuilder.Entity("api.Models.NutriGoals", b =>
+                {
+                    b.Property<int>("DayId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DayId"));
+
+                    b.Property<string>("Calories")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Carbs")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Fat")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Protein")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("UsersUserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("DayId");
+
+                    b.HasIndex("UsersUserId");
+
+                    b.ToTable("NutriGoals");
                 });
 
             modelBuilder.Entity("api.Models.Users", b =>
@@ -132,6 +169,15 @@ namespace api.Migrations
                     b.ToTable("Workouts");
                 });
 
+            modelBuilder.Entity("api.Models.NutriGoals", b =>
+                {
+                    b.HasOne("api.Models.Users", "Users")
+                        .WithMany("NutriGoals")
+                        .HasForeignKey("UsersUserId");
+
+                    b.Navigation("Users");
+                });
+
             modelBuilder.Entity("api.Models.Workouts", b =>
                 {
                     b.HasOne("api.Models.MuscleGroups", "MuscleGroups")
@@ -154,6 +200,8 @@ namespace api.Migrations
 
             modelBuilder.Entity("api.Models.Users", b =>
                 {
+                    b.Navigation("NutriGoals");
+
                     b.Navigation("Workout");
                 });
 #pragma warning restore 612, 618

@@ -17,5 +17,6 @@ namespace api.Data
         public DbSet<Workouts> Workouts { get; set; }
         public DbSet<Users> Users { get; set; }
         public DbSet<MuscleGroups> MuscleGroups { get; set; }
+        public DbSet<NutriGoals> NutriGoals { get; set; }
     }
 }

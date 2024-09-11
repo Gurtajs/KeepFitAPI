@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace api.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class init1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -46,6 +46,29 @@ namespace api.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "NutriGoals",
+                columns: table => new
+                {
+                    DayId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Calories = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Protein = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Carbs = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Fat = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    UsersUserId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_NutriGoals", x => x.DayId);
+                    table.ForeignKey(
+                        name: "FK_NutriGoals_Users_UsersUserId",
+                        column: x => x.UsersUserId,
+                        principalTable: "Users",
+                        principalColumn: "UserId");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Workouts",
                 columns: table => new
                 {
@@ -78,6 +101,11 @@ namespace api.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_NutriGoals_UsersUserId",
+                table: "NutriGoals",
+                column: "UsersUserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Workouts_MuscleGroupsMuscleGroupId",
                 table: "Workouts",
                 column: "MuscleGroupsMuscleGroupId");
@@ -91,6 +119,9 @@ namespace api.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "NutriGoals");
+
             migrationBuilder.DropTable(
                 name: "Workouts");
 
