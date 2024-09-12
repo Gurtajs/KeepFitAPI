@@ -51,10 +51,10 @@ namespace api.Migrations
                 {
                     DayId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Calories = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Protein = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Carbs = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Fat = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Calories = table.Column<int>(type: "int", nullable: false),
+                    Protein = table.Column<int>(type: "int", nullable: false),
+                    Carbs = table.Column<int>(type: "int", nullable: false),
+                    Fat = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false),
                     UsersUserId = table.Column<int>(type: "int", nullable: true)
                 },

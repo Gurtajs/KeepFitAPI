@@ -7,11 +7,10 @@ namespace api.Models
 	{
 		[Key]
 		public int DayId { get; set; }
-		public string Calories { get; set; } = string.Empty;
-        public string Protein { get; set; } = string.Empty;
-        public string Carbs { get; set; } = string.Empty;
-        public string Fat { get; set; } = string.Empty;
-
+		public int Calories { get; set; }  
+        public int Protein { get; set; } 
+        public int Carbs { get; set; } 
+        public int Fat { get; set; }
         public int UserId { get; set; }  // Foreign key to User
         public Users? Users { get; set; }  // Required navigation property
     }

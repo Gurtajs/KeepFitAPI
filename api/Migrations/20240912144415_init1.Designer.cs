@@ -12,7 +12,7 @@ using api.Data;
 namespace api.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20240911151208_init1")]
+    [Migration("20240912144415_init1")]
     partial class init1
     {
         /// <inheritdoc />
@@ -49,21 +49,17 @@ namespace api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DayId"));
 
-                    b.Property<string>("Calories")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Calories")
+                        .HasColumnType("int");
 
-                    b.Property<string>("Carbs")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Carbs")
+                        .HasColumnType("int");
 
-                    b.Property<string>("Fat")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Fat")
+                        .HasColumnType("int");
 
-                    b.Property<string>("Protein")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Protein")
+                        .HasColumnType("int");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
