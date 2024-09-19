@@ -21,5 +21,6 @@ namespace api.Models
 		public string? HeightUnit { get; set; }
 		public List<Workouts> Workout { get; set; } = new List<Workouts>();
         public List<NutriGoals> NutriGoals { get; set; } = new List<NutriGoals>();
+		public List<Meals> Meals { get; set; } = new List<Meals>();
     }
 }

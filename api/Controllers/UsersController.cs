@@ -199,5 +199,17 @@ namespace api.Controllers
 
             return Ok("Workout deleted successfully");
         }
+        [HttpGet("{id}/meals")]
+
+        public IActionResult GetMealByUser([FromRoute] int id)
+        {
+            var meals = _context.Meals.FromSqlInterpolated($"SELECT * FROM Meals WHERE userId = {id}").ToList();
+
+            if (meals == null)
+            {
+                return NotFound();
+            }
+            return Ok(meals);
+        }
     }
 }

@@ -22,6 +22,46 @@ namespace api.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("api.Models.Meals", b =>
+                {
+                    b.Property<int>("MealId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MealId"));
+
+                    b.Property<int>("Calories")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Carbs")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Fats")
+                        .HasColumnType("int");
+
+                    b.Property<string>("MealName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Protein")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("UsersUserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("MealId");
+
+                    b.HasIndex("UsersUserId");
+
+                    b.ToTable("Meals");
+                });
+
             modelBuilder.Entity("api.Models.MuscleGroups", b =>
                 {
                     b.Property<int>("MuscleGroupId")
@@ -162,6 +202,15 @@ namespace api.Migrations
                     b.ToTable("Workouts");
                 });
 
+            modelBuilder.Entity("api.Models.Meals", b =>
+                {
+                    b.HasOne("api.Models.Users", "Users")
+                        .WithMany("Meals")
+                        .HasForeignKey("UsersUserId");
+
+                    b.Navigation("Users");
+                });
+
             modelBuilder.Entity("api.Models.NutriGoals", b =>
                 {
                     b.HasOne("api.Models.Users", "Users")
@@ -193,6 +242,8 @@ namespace api.Migrations
 
             modelBuilder.Entity("api.Models.Users", b =>
                 {
+                    b.Navigation("Meals");
+
                     b.Navigation("NutriGoals");
 
                     b.Navigation("Workout");

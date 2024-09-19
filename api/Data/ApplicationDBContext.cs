@@ -18,5 +18,6 @@ namespace api.Data
         public DbSet<Users> Users { get; set; }
         public DbSet<MuscleGroups> MuscleGroups { get; set; }
         public DbSet<NutriGoals> NutriGoals { get; set; }
+        public DbSet<Meals> Meals { get; set; }
     }
 }
