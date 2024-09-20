@@ -8,7 +8,8 @@ namespace api.Models
 		[Key]
 		public int MealId { get; set; }
 		public string MealName { get; set; } = string.Empty;
-		public int Quantity { get; set; }
+		public string MealTime { get; set; } = string.Empty;
+        public int Quantity { get; set; }
 		public int Calories { get; set; }
 		public int Carbs { get; set; }
         public int Fats { get; set; }

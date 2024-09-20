@@ -12,7 +12,7 @@ using api.Data;
 namespace api.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20240919144219_init")]
+    [Migration("20240920150026_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -43,6 +43,10 @@ namespace api.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("MealName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MealTime")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
