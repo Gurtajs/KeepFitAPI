@@ -211,5 +211,22 @@ namespace api.Controllers
             }
             return Ok(meals);
         }
+
+        [HttpDelete("{id}/meals/{mealId}")]
+
+
+        public IActionResult DeleteMeal(int id, int mealId)
+        {
+            var mealToDelete = _context.Meals.FirstOrDefault(w => w.UserId == id && w.MealId == mealId);
+
+            if (mealToDelete == null)
+            {
+                return NotFound("workout not found");
+            }
+            _context.Remove(mealToDelete);
+            _context.SaveChanges();
+
+            return Ok("meal deleted successfully");
+        }
     }
 }
