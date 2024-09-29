@@ -59,6 +59,9 @@ namespace api.Migrations
                     b.Property<int?>("UsersUserId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("mealDate")
+                        .HasColumnType("datetime2");
+
                     b.HasKey("MealId");
 
                     b.HasIndex("UsersUserId");

@@ -14,6 +14,7 @@ namespace api.Models
 		public int Carbs { get; set; }
         public int Fats { get; set; }
         public int Protein { get; set; }
+        public DateTime mealDate { get; set; }
         public int UserId { get; set; }  // Foreign key to User
         public Users? Users { get; set; }  // Required navigation property
     }

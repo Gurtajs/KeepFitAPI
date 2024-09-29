@@ -221,7 +221,7 @@ namespace api.Controllers
 
             if (mealToDelete == null)
             {
-                return NotFound("workout not found");
+                return NotFound("meal not found");
             }
             _context.Remove(mealToDelete);
             _context.SaveChanges();
