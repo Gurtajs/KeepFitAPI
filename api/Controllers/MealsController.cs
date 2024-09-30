@@ -26,7 +26,7 @@ namespace api.Controllers
         }
 
         [HttpPost]
-        public IActionResult PostWorkout([FromBody] Meals meals)
+        public IActionResult PostMeals([FromBody] Meals meals)
         {
             if (meals == null)
             {

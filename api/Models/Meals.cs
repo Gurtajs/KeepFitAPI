@@ -14,7 +14,14 @@ namespace api.Models
 		public int Carbs { get; set; }
         public int Fats { get; set; }
         public int Protein { get; set; }
-        public DateTime mealDate { get; set; }
+        private DateTime _mealDate;
+
+        public DateTime MealDate
+        {
+            get { return _mealDate.Date; }  
+            set { _mealDate = value.Date; }  
+        }
+
         public int UserId { get; set; }  // Foreign key to User
         public Users? Users { get; set; }  // Required navigation property
     }

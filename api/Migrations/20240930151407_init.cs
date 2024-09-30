@@ -58,7 +58,7 @@ namespace api.Migrations
                     Carbs = table.Column<int>(type: "int", nullable: false),
                     Fats = table.Column<int>(type: "int", nullable: false),
                     Protein = table.Column<int>(type: "int", nullable: false),
-                    mealDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    MealDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false),
                     UsersUserId = table.Column<int>(type: "int", nullable: true)
                 },

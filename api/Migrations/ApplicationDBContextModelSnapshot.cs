@@ -39,6 +39,9 @@ namespace api.Migrations
                     b.Property<int>("Fats")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("MealDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("MealName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -58,9 +61,6 @@ namespace api.Migrations
 
                     b.Property<int?>("UsersUserId")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("mealDate")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("MealId");
 

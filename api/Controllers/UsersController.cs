@@ -199,11 +199,11 @@ namespace api.Controllers
 
             return Ok("Workout deleted successfully");
         }
-        [HttpGet("{id}/meals")]
+        [HttpGet("{id}/meals/{date:datetime}")]
 
-        public IActionResult GetMealByUser([FromRoute] int id)
+        public IActionResult GetMealByUserDate([FromRoute] int id, DateTime date)
         {
-            var meals = _context.Meals.FromSqlInterpolated($"SELECT * FROM Meals WHERE userId = {id}").ToList();
+            var meals = _context.Meals.FromSqlInterpolated($"SELECT * FROM Meals WHERE userId = {id} AND mealDate = {date}").ToList();
 
             if (meals == null)
             {
