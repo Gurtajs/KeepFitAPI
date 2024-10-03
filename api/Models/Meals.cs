@@ -11,9 +11,9 @@ namespace api.Models
 		public string MealTime { get; set; } = string.Empty;
         public int Quantity { get; set; }
 		public int Calories { get; set; }
-		public int Carbs { get; set; }
-        public int Fats { get; set; }
-        public int Protein { get; set; }
+		public decimal Carbs { get; set; }
+        public decimal Fats { get; set; }
+        public decimal Protein { get; set; }
         private DateTime _mealDate;
 
         public DateTime MealDate

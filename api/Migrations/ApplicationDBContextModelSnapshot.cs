@@ -33,11 +33,11 @@ namespace api.Migrations
                     b.Property<int>("Calories")
                         .HasColumnType("int");
 
-                    b.Property<int>("Carbs")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Carbs")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("Fats")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Fats")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("MealDate")
                         .HasColumnType("datetime2");
@@ -50,8 +50,8 @@ namespace api.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Protein")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Protein")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");

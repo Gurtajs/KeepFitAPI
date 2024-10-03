@@ -55,9 +55,9 @@ namespace api.Migrations
                     MealTime = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false),
                     Calories = table.Column<int>(type: "int", nullable: false),
-                    Carbs = table.Column<int>(type: "int", nullable: false),
-                    Fats = table.Column<int>(type: "int", nullable: false),
-                    Protein = table.Column<int>(type: "int", nullable: false),
+                    Carbs = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Fats = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Protein = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     MealDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false),
                     UsersUserId = table.Column<int>(type: "int", nullable: true)

@@ -212,8 +212,20 @@ namespace api.Controllers
             return Ok(meals);
         }
 
-        [HttpDelete("{id}/meals/{mealId}")]
+        [HttpGet("{id}/meals/{mealId}")]
 
+        public IActionResult GetMealsByMealId(int id, int mealId)
+        {
+            var mealsById = _context.Meals.FromSqlInterpolated($"SELECT * FROM Meals WHERE userId = {id} AND mealId = {mealId}").ToList();
+
+            if (mealsById == null)
+            {
+                return NotFound();
+            }
+            return Ok(mealsById);
+        }
+
+        [HttpDelete("{id}/meals/{mealId}")]
 
         public IActionResult DeleteMeal(int id, int mealId)
         {
