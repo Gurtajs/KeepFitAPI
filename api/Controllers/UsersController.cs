@@ -97,6 +97,7 @@ namespace api.Controllers
 			Email= user.Email,
             FirstName = user.FirstName,
             LastName = user.LastName,
+			Gender = user.Gender,
             Age = user.Age,
 			ProfilePicture = user.ProfilePicture,
 			Weight = user.Weight,

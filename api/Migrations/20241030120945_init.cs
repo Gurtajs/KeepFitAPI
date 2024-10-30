@@ -33,6 +33,7 @@ namespace api.Migrations
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Gender = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Age = table.Column<int>(type: "int", nullable: false),
                     ProfilePicture = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Weight = table.Column<int>(type: "int", nullable: true),
@@ -82,6 +83,7 @@ namespace api.Migrations
                     Protein = table.Column<int>(type: "int", nullable: false),
                     Carbs = table.Column<int>(type: "int", nullable: false),
                     Fat = table.Column<int>(type: "int", nullable: false),
+                    GoalDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false),
                     UsersUserId = table.Column<int>(type: "int", nullable: true)
                 },

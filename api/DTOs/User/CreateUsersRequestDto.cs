@@ -10,7 +10,8 @@ namespace api.DTOs.Users
         public string Email { get; set; } = string.Empty;
         public string FirstName { get; set; } = string.Empty;
 		public string LastName { get; set; } = string.Empty;
-		public int age { get; set; }
+        public string Gender { get; set; } = string.Empty;
+        public int age { get; set; }
 		public string? ProfilePicture { get; set; } = null;
 		public int? Weight { get; set; }
         public string? WeightUnit { get; set; }
