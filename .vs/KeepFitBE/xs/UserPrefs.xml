@@ -1,29 +1,31 @@
 ﻿<Properties StartupConfiguration="{6522CB60-570D-4A1E-A351-8B9A558EC1F2}|https">
-  <MonoDevelop.Ide.ItemProperties.api PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="api/Models/Workouts.cs">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="api/Data/ApplicationDBContext.cs">
     <Files>
-      <File FileName="api/Controllers/UsersController.cs" Line="39" Column="4" />
-      <File FileName="api/DTOs/User/UsersDto.cs" Line="18" Column="29" />
-      <File FileName="api/Models/Workouts.cs" Line="17" Column="38" />
-      <File FileName="api/Models/Users.cs" Line="18" Column="35" />
-      <File FileName="api/Models/MuscleGroups.cs" Line="11" Column="49" />
+      <File FileName="api/Controllers/WorkoutController.cs" Line="37" Column="34" IsPinned="True" />
+      <File FileName="api/Models/Users.cs" Line="17" Column="31" IsPinned="True" />
+      <File FileName="api/Controllers/UsersController.cs" />
+      <File FileName="api/Controllers/MuscleGroupsController.cs" />
+      <File FileName="api/Controllers/MealsController.cs" />
+      <File FileName="api/Controllers/NutriGoalsController.cs" />
+      <File FileName="api/DTOs/User/CreateUsersRequestDto.cs" />
+      <File FileName="api/DTOs/User/UsersDto.cs" />
+      <File FileName="api/Data/ApplicationDBContext.cs" Line="15" Column="13" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="KeepFitBE" expanded="True">
-            <Node name="api" expanded="True">
+            <Node name="api">
               <Node name="Controllers" expanded="True" />
-              <Node name="Data" expanded="True" />
+              <Node name="Data" expanded="True">
+                <Node name="ApplicationDBContext.cs" selected="True" />
+              </Node>
               <Node name="DTOs" expanded="True">
                 <Node name="User" expanded="True" />
               </Node>
-              <Node name="Mappers" expanded="True" />
               <Node name="Models" expanded="True" />
             </Node>
           </Node>
@@ -34,5 +36,8 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.api PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>
